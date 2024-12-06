@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 def click_button_post(value):
-     requests.post("http://host.docker.internal:8000/items", json={"text": value})
+     requests.post("http://localhost:8000/items", json={"text": value})
 
 st.title('Первая лабораторная работа v1.0')
 text = st.text_input('Введите данные, для проверки работоспособности и нажмите на кнопку')
@@ -11,7 +11,7 @@ if st.button("Отправить", type="secondary"):
      st.rerun()
 
 def click_button_get():
-     value = requests.get("http://host.docker.internal:8000/items")
+     value = requests.get("http://localhost:8000/items")
      return value.json()
 
 st.title('Первая лабораторная работа v2.0')
