@@ -2,9 +2,8 @@ FROM python:3.11
 
 ENV TEXT "Hello!"
 
-COPY requirements.txt requirements.txt
+RUN pip install streamlit
 COPY main.py main.py
 
-RUN pip install --no-cache-dir -r requirements.txt
 
 CMD ["streamlit", "run", "main.py"]
